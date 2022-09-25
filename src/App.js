@@ -1,14 +1,11 @@
 
 import './App.css';
-import NavigationMain from './components/NavegationMain';
-import Header from './components/Header';
-import SearchHeader from './components/SearchHeader';
-import UserAutentication from './components/UserAutentication';
+import HomeLayout from './components/home/HomeLayout';
 
 function App() {
   return (
     <div className="App">
-      <Header navigationMain={<NavigationMain />} searchHeader={<SearchHeader />} userAutentication={<UserAutentication />}/>
+        <HomeLayout />
     </div>
   );
 }

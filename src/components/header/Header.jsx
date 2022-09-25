@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class Header extends Component {
+class HeaderApp extends Component {
 
     constructor(props) {
         super(props);
@@ -29,4 +29,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default HeaderApp;
