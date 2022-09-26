@@ -1,0 +1,25 @@
+
+.app {
+    background: #f1f1f1;
+    display: grid;
+   grid-template-areas: "conteudo"
+                        "rodape";
+    grid-template-columns: auto;
+    grid-template-rows: 3em auto auto;
+}
+
+body {
+    font-family: 'Truculenta', sans-serif;
+}
+ 
+.conteudo {
+    background-color: cornflowerblue;
+    grid-area: conteudo;
+    padding: 0 2rem;
+    background-color: whitesmoke;
+}
+
+.rodape {
+  grid-area: rodape;
+  
+}

@@ -1,0 +1,63 @@
+
+body {
+    font-family: 'Truculenta', sans-serif;
+}
+
+#content_apresentation {
+    position: relative;
+    height: auto;
+}
+
+#presentation_title {
+    position: absolute;
+    color: aliceblue;
+    top: 0;
+    margin: 3rem;
+    font-size: 5em;
+    opacity: .3;
+}
+
+#content_intro {
+    height: auto;
+    padding: 3rem;
+    background-color: black;
+    color: aliceblue;
+    background-image: linear-gradient(rgb(0,0,0, .5), #2f4f4f, white 99.9%);
+    overflow: auto;
+}
+
+#content_intro h3 {
+    color: rgb(164, 164, 14);
+    font-size: 2em;
+}
+
+#content_intro h3, p {
+    width: 50%;
+    padding: 1rem;
+    float: left;
+    clear: left;
+}
+
+#content_intro p {
+    font-size: 1.5em;
+    color: rgb(3, 3, 98);
+}
+
+#content_intro__img {
+    width: 35%;
+    
+}
+
+@media screen and (max-width: 575px) {
+    #content_intro h3, p {
+       margin-bottom: 1rem;
+    }
+
+    #content_intro__img {
+        width: 51%;
+    }
+
+    #content_dsv {
+        margin: 0 10%;
+    }
+}

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 
-class UserAutentication extends Component {
+class UserAuthentication extends Component {
     
     render() {
         return(
@@ -13,4 +13,4 @@ class UserAutentication extends Component {
     }
 }
 
-export default UserAutentication;
+export default UserAuthentication;

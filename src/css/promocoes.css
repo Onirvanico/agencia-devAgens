@@ -1,0 +1,32 @@
+.featured_img {
+    object-fit: cover;
+}
+
+.icon_location {
+    position: absolute;
+    bottom: 0;
+}
+
+.item_discount {
+    position: absolute;
+    right: 0;
+    border-radius: .5rem;
+    margin: 1rem;
+    color: azure;
+    background-color: rgba(105, 187, 6, 0.5);
+    padding: .5rem;
+}
+
+body {
+    font-family: 'Truculenta', sans-serif;
+}
+
+.card_scale {
+    transition: .5s ease-out ;
+}
+
+.card_scale:hover {
+    
+    transform: scale(1.25);
+    z-index: 1;
+}
