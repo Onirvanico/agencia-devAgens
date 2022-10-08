@@ -31,7 +31,7 @@ body {
     font-size: 2em;
 }
 
-#content_intro h3, p {
+#content_intro h3, #content_intro p {
     width: 50%;
     padding: 1rem;
     float: left;

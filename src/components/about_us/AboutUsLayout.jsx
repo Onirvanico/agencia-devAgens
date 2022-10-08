@@ -1,8 +1,7 @@
-import HeaderApp from "../header/Header";
+import HeaderApp from "../header/HeaderApp";
 import NavigationMain from "../header/NavegationMain";
 import UserAuthentication from "../header/UserAuthentication";
 import MainAboutUs from "./MainAboutUs";
-import "../../css/sobre-nos.css";
 import Footer from "../footer/Footer";
 
 function AboutUsLayout() {

@@ -1,6 +1,6 @@
 import "../../css/destino.css";
 import Footer from "../footer/Footer";
-import HeaderApp from "../header/Header";
+import HeaderApp from "../header/HeaderApp";
 import NavigationMain from "../header/NavegationMain";
 import SearchHeader from "../header/SearchHeader";
 import MainDestinations from "./MainDestinations";

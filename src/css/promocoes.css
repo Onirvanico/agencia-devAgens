@@ -17,10 +17,6 @@
     padding: .5rem;
 }
 
-body {
-    font-family: 'Truculenta', sans-serif;
-}
-
 .card_scale {
     transition: .5s ease-out ;
 }

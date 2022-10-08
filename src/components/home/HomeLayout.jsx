@@ -1,5 +1,5 @@
 import "../../css/home.css";
-import HeaderApp from "../header/Header";
+import HeaderApp from "../header/HeaderApp";
 import MainHome from "./MainHome";
 import NavigationMain from "../header/NavegationMain";
 import SearchHeader from "../header/SearchHeader";

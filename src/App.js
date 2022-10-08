@@ -1,6 +1,5 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
 import ContainerApp from './components/ContainerApp';
 import DestinationsLayout from './components/destinations/DestinationsLayout';
 import PageNotFound from './components/not_found/PageNotFound';
