@@ -16,8 +16,8 @@ class PromotionsList extends Component {
 
     async componentDidMount() {
       this.result = await this.service.getAll;
-      this.listComponents = this.result.map(pac => <PromotionItem key={pac.id} pacote={pac} />);
-      this.setState({ pacotes: this.listComponents});
+      this.componentList = this.result.map(pac => <PromotionItem key={pac.id} pacote={pac} />);
+      this.setState({ pacotes: this.componentList});
     }
 
     render() {

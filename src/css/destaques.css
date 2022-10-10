@@ -9,7 +9,6 @@
 }
 
 .destaques__principal {
-    background-image: url("");
     background-repeat: no-repeat;
     grid-row-start: 1;
     grid-row-end: 3;
@@ -21,22 +20,22 @@
 
 .destaques__secundario:nth-child(2) {
    
-  background: url("") center / cover no-repeat;
+  background: center / cover no-repeat;
  
 }
 
 .destaques__secundario:nth-child(3) {
-  background: url("") center / cover no-repeat;
+  background: center / cover no-repeat;
 
 }
 
 .destaques__secundario:nth-child(4) {
-    background: url("") center / cover no-repeat;
+    background: center / cover no-repeat;
    
 }
 
 .destaques__secundario:nth-child(5) {
-    background: url("") center / cover no-repeat;
+    background: center / cover no-repeat;
 
 }
 

@@ -1,13 +1,9 @@
-import { Pacote } from '../models/Pacote';
-
+import { BASE_URL, EP_PACOTES } from "./ApiUrl";
 
 class PacoteService {
 
-    BASE_URL = "http://localhost:8081/";
-
-
      constructor() {
-        this.pacotesPromisse = fetch(this.BASE_URL + "pacotes");
+        this.pacotesPromisse = fetch(BASE_URL + EP_PACOTES);
     }
 
     get getAll() {
