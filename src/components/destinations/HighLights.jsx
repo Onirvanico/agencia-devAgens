@@ -13,7 +13,7 @@ class HighLights extends Component {
         }
     }
     async componentDidMount() {
-        this.result = await this.service.getAll;
+        this.result = await this.service.retrieveUntil(5);
         this.componentList = this.result.map((dest, index) => {
         return index === 0 ? 
         <HighLightItem key={dest.id} destino={dest} classN="destaques__principal" /> :
@@ -29,17 +29,17 @@ class HighLights extends Component {
             <div className="destaques__categorias">
                 <ul className="destaques__categorias___lista">
                     <li className="destaques__categorias___item">
-                        <a className="destaques__categorias___link"  role="button" href="#">
+                        <a className="destaques__categorias___link"  role="button" href=" ">
                         Para família
                         </a>
                     </li>
                     <li className="destaques__categorias___item">
-                        <a className="destaques__categorias___link" href="#">
+                        <a className="destaques__categorias___link" href=" ">
                         Para casais
                         </a>
                     </li>
                     <li className="destaques__categorias___item">
-                        <a className="destaques__categorias___link" role="button" href="#">
+                        <a className="destaques__categorias___link" role="button" href=" ">
                         Para grupo de amigos
                         </a>
                     </li>

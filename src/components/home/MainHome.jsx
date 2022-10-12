@@ -1,5 +1,5 @@
 import { Component } from "react";
-import DestinationsInfo from "./DestinationInfo";
+import DestinationsInfo from "./DestinationsInfo";
 import DestinationsCarousel from "./DestinationsCarousel";
 import TypeOfPlans from "./TypeOfPlans";
 

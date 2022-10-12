@@ -1,6 +1,7 @@
 import { Component } from "react";
 import DestinoService from "../../services/DestinoService";
 import CarouselItem from "./CarouselItem";
+import IndicatorItem from './IndicatorItem';
 
 
 class DestinationsCarousel extends Component {
@@ -9,7 +10,8 @@ class DestinationsCarousel extends Component {
         super(props);
         this.service = new DestinoService();
         this.state = {
-            destinos: []
+            destinos: [],
+            carouselIndicators: []
         };
     }
 
@@ -20,18 +22,21 @@ class DestinationsCarousel extends Component {
         <CarouselItem key={dest.id} destino={dest} classN="active" /> :
         <CarouselItem key={dest.id} destino={dest} />
     });
+
+    this.indicatorList = this.result.map((dest, index) => {
+        return index === 0 ? 
+        <IndicatorItem key={dest.id} classN={"active"} position={index} current={"true"} slidePosition={index + 1} /> :
+        <IndicatorItem key={dest.id} position={index} slidePosition={index + 1} />
+    });
+
       this.setState({ destinos: this.componentList });
+      this.setState({ carouselIndicators: this.indicatorList});
     }
     render() {
         return(
         <div id="myCarousel" className="carousel slide bg-dark" data-bs-ride="carousel">
             <div className="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="active" aria-current="true"
-                aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                {this.state.carouselIndicators}
             </div>
             <div className="carousel-inner">  
                 {this.state.destinos}
