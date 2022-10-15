@@ -1,8 +1,10 @@
 import { BASE_URL, EP_DESTINOS, LIMIT_QUERY } from "./ApiUrl"
+import Service from './Service';
 
-class DestinoService {
+class DestinoService extends Service {
     
     constructor() {
+        super();
         this.destinosPromisse = fetch(BASE_URL + EP_DESTINOS);
     }
 
@@ -31,14 +33,6 @@ class DestinoService {
                 throw new Error(`Ocorreu um erro durante a recuperação dos destinos parciais ${error.message}`)
             })
         );
-    }
-
-    isFailure = (response) => {
-        if(!response.ok && response.status !== 404) throw new Error("Erro ao tentar realizar a requisição");
-    }
-    
-    isNotFound = (response, msg) => {
-        if(response.status === 404) throw new Error(msg);
     }
 }
 

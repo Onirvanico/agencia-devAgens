@@ -6,7 +6,7 @@ class DestinationInfo extends Component {
 
     render() {
         return(
-            <div className="col-lg-4 mb-3">
+            <div className="col-md-4 col-sm-6 mb-4">
                 <img className="bd-placeholder-img rounded-circle" width="140" height="140" src={`data:image/jpeg;base64,${this.props.destino.imagem}`}
                    aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
                 </img>

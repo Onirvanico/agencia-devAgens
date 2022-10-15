@@ -17,7 +17,7 @@ class DestinationsInfo extends Component {
   }
 
   async componentDidMount() {
-    this.result = await this.service.retrieveUntil(3)
+    this.result = await this.service.retrieveUntil(6)
     this.destinosParcialList = this.result.map(dest => <DestinationInfo key={dest.id} destino={dest} />);
     this.setState({ destinos: this.destinosParcialList});
   }

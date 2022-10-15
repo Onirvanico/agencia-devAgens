@@ -11,7 +11,7 @@ class NavigationMain extends Component {
                     <li><Link to="/destinations" className="nav-link px-2 text-white">Destino</Link></li>
                     <li><Link to="/promotions" className="nav-link px-2 text-white">Promoções</Link></li>
                     <li><Link to="/contacts" className="nav-link px-2 text-white">Contato</Link></li>
-                    <li><Link to="/about_us" className="nav-link px-2 text-secondary">Sobre nós</Link></li>
+                    <li><Link to="/about_us" className="nav-link px-2 text-white">Sobre nós</Link></li>
                 </ul>
             
        );

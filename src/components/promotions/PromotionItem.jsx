@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import FormatNumber from '../../shared/helpers/FormatNumber';
 
 
 class PromotionItem extends Component {
@@ -20,7 +21,7 @@ class PromotionItem extends Component {
                         <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
                       </svg></button>
                     </div>
-                    <small className="text-success fw-bold">R$ {this.props.pacote.preco}</small>
+                    <small className="text-success fw-bold">{FormatNumber.toBRLCurrency(this.props.pacote.preco)}</small>
                   </div>
                 </div>
               </div>
