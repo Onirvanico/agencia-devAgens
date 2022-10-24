@@ -8,7 +8,7 @@ class Destino {
         this.imagem = imagem;
     }
 
-    get loca() {
+    get local() {
         return this.local;
     }
 

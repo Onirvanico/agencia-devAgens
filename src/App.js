@@ -8,6 +8,7 @@ import PromotionLayout from './components/promotions/PromotionLayout';
 import ContactLayout from './components/contacts/ContactLayout';
 import AboutUsLayout from './components/about_us/AboutUsLayout';
 import ReservationLayout from './shared/reservation/ReservationLayout';
+import PaymentLayout from './components/payment/PaymentLayout';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='contacts' element={<ContactLayout />} />
           <Route path='about_us' element={<AboutUsLayout />} />
           <Route path='reservation/:id' element={<ReservationLayout />} />
+          <Route path='payment/:id' element={<PaymentLayout />} />
           <Route path='*' element={<PageNotFound />} />
         </Route>
       </Routes>

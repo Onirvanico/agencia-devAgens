@@ -3,11 +3,11 @@
 
 export default class Reserva {
 
-    constructor(numViajantes, dataViagem, pacote, valorTotal) {
+    constructor(numViajantes, dataHora, pacote, total) {
         this.numViajantes = numViajantes;
-        this.dataViagem = dataViagem;
+        this.dataHora = dataHora;
         this.pacote = pacote;
-        this.valorTotal = valorTotal;
+        this.total = total;
     }
 
     

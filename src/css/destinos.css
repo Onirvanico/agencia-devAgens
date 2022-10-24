@@ -52,6 +52,7 @@
     grid-template-rows: 3em auto;
     grid-template-areas: "header"
                          "body";
+    gap: 1rem;
 }
 
 .destinos__card___titulo {

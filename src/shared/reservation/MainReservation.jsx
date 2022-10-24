@@ -1,8 +1,9 @@
 
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Reserva from '../../models/Reserva';
 import PacoteService from '../../services/PacoteService';
+import ReservaService from '../../services/ReservaService';
 import FormatDate from '../helpers/FormatDate';
 import FormatNumber from '../helpers/FormatNumber';
 
@@ -11,6 +12,7 @@ const service = new PacoteService();
 
 function MainReservation()  {
     
+      const navigation = useNavigate();
       const [pacote, setPacote] = useState({id:0, diasEstadia:0, preco: 0, destino:{}});
       
       const [numTravelersInput, setnumTravelersInput] = useState(1);
@@ -101,7 +103,7 @@ function MainReservation()  {
                                 <input type="time" className="form-control ms-3 float-end" id="choiceTime"  required
                                 style={{ display: "inline", width: "50%"}} onChange={e => setTimeInput(e.target.value)}/>
                             </div>
-                            <button id="liveAlertBtn" type="submit" onClick={e => { saveReservation(e, numTravelersInput, dateInput, timeInput, pacote, totalValue)}} className="btn btn-primary w-100 mt-5" style={{alignSelf: "flex-end"}}>Concluir Reserva</button>
+                            <button id="liveAlertBtn" type="submit" onClick={e => { saveReservation(e, numTravelersInput, dateInput, timeInput, pacote, totalValue, navigation)}} className="btn btn-primary w-100 mt-5" style={{alignSelf: "flex-end"}}>Concluir Reserva</button>
                         </form>
                     </div>
                 </div>
@@ -116,14 +118,20 @@ function calcTotalValue(numTravelers, value) {
             value;
 }
 
-function saveReservation(event, numTravelers, dataViagem, horaViagem, pacote, valorTotal) {
+function saveReservation(event, numTravelers, dataViagem, horaViagem, pacote, valorTotal, navigation) {
     event.preventDefault();
     const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
     
     if(isValidFields(dataViagem, horaViagem, valorTotal)){
         let fullDate = new Date(`${dataViagem} ${horaViagem}`)
         let reservation = new Reserva(numTravelers, fullDate, pacote, valorTotal);
-        console.log("Reserva", reservation);
+        const service = new ReservaService();
+        service.save(reservation)
+            .then(response => {
+                alert("Reserva realizada com sucesso", response);
+                console.log("RESPONSE", response);
+                navigation(`/payment/${response.id}`);
+            });
 
     } else {
         if(alertPlaceholder.hasChildNodes()) alertPlaceholder.removeChild(alertPlaceholder.firstChild)
@@ -135,7 +143,7 @@ function saveReservation(event, numTravelers, dataViagem, horaViagem, pacote, va
             alertPlaceholder.appendChild(wrapper)
         }
 
-        alert("É necessário preencher todos os campos", 'warning')
+        alert("Por favor, preencha todos os campos!", 'warning')
         
     }
 }
