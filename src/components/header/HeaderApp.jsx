@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ModalSignIn from '../../shared/ModalSignIn';
+import ModalSignUp from '../../shared/ModalSignUp';
 
 
 class HeaderApp extends Component {
@@ -11,6 +13,7 @@ class HeaderApp extends Component {
     render() {
         return(
     
+            <>
                 <header className="app_header">
                     <div className="p-3 bg-dark text-white app_header">
                         <div className="container">
@@ -26,6 +29,9 @@ class HeaderApp extends Component {
                         </div>
                     </div>
                 </header>
+                <ModalSignIn />
+                <ModalSignUp />
+            </>
     
         );
     }
