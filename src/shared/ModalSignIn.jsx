@@ -31,7 +31,8 @@ class ModalSignIn extends Component {
                                 <input type="password" className="form-control rounded-4" id="inputPassword" placeholder="Password" onChange={ e => this.setState({ password: e.target.value })} required />
                                 <label htmlFor="inputPassword">Senha</label>
                             </div>
-                            <button className="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit" onClick={() => this.validateAuth()}>Entrar</button>
+                            <button className="w-100 mb-2 btn btn-lg rounded-4 btn-dark" type="submit" onClick={e => {e.preventDefault() 
+                                this.validateAuth()}}>Entrar</button>
                             <small className="text-muted"></small>
                             <hr className="my-4" />
                         </form>
@@ -45,11 +46,16 @@ class ModalSignIn extends Component {
     validateAuth() {
         console.log("Passei aqui");
         fetch("http://localhost:8081/destinos" , {
+            mode: "no-cors",
+            credentials: "include",
             headers: new Headers({
-                "Authorization": `Basic username: ${this.state.usermane}: password: ${this.state.password}}`
+                "Authorization": "Basic  "+ `${this.state.usermane}:${this.state.password}`,
+                "Content-Type": "application/json"
             })
         })
-        .then(response => alert("Status da requisição " + response.status));
+        .then(response => alert("Status da requisição " + response.status))
+        .catch(error => alert("Error " + error.message()))
+        console.log("auth",window.btoa(`${this.state.usermane}:${this.state.password}`))
             
     }
 }

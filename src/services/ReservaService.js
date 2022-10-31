@@ -4,13 +4,13 @@ import Service from "./Service";
 
 
 class ReservaService extends Service {
-
     save(reserva) {
+        this.headers = new Headers();
+        this.headers.append("Content-Type", "application/json; charset=UTF-8");
      return this.reservaPromisse = fetch(`${BASE_URL}${EP_RESERVAS}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            method: "post",
+            mode: "no-cors",
+            headers: this.headers,
             body: JSON.stringify(reserva)
         }).then(response => {
             this.isFailure(response);
