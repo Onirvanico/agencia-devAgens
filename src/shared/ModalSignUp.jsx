@@ -40,7 +40,7 @@ class ModalSignUp extends Component {
                                 <input type="password" className="form-control rounded-4" id="inputPasswordRegister" placeholder="Password" onChange={e => this.setState({senha: e.target.value})}/>
                                 <label htmlFor="inputPasswordRegister">Senha</label>
                             </div>
-                            <button className="w-100 mb-2 btn btn-lg rounded-4 btn-dark" onClick={e => this.registerUser(e)}>Registrar-se</button>
+                            <button className="w-100 mb-2 btn btn-lg rounded-4 btn-dark" onClick={ => this.registerUser(e)}>Registrar-se</button>
                             <small className="text-muted"></small>
                             <hr className="my-4" />
                         </form>
@@ -51,8 +51,7 @@ class ModalSignUp extends Component {
         );
     }
 
-    registerUser(e) {
-        e.preventDefault();
+    registerUser() {
 
         if(this.areValidFields()) {
             this.newUser = new Usuario(this.state.nome, this.state.email, this.state.senha);
